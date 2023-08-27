@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Edit User</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="name">Name: </label>
+        <input id="name" type="text" name="name" value="{{ user.name }}" />
+    </div>
+    <div class="form-group">
+        <label for="age">Age: </label>
+        <input id="age" type="text" name="age" value="{{ user.age }}" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input id="email" type="text" name="email" value="{{ user.email }}" />
+    </div>
+</div>
+<button type="submit" class="btn btn-primary">Save Changes</button>
+</div>
+    </form>
+  </body>
+</html>

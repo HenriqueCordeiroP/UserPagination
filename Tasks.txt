@@ -1,0 +1,17 @@
+Task: develop a program using the Django framework to consume the
+API https://run.mocky.io/v3/ce47ee53-6531-4821-a6f6-71a188eaaee0
+and display user data on a card, displaying the options for edit and delete. 
+
+Subtasks:
+- Create new Django project and app
+- Configure settings.py (INSTALLED_APPS, TEMPLATES)
+- Configure urls.py
+- Implement a view to fetch data from the API https://run.mocky.io/v3/ce47ee53-6531-4821-a6f6-71a188eaaee0
+- Design and build HTML for table display
+- Style HTML using Bootstrap CSS
+- Divide API reponse into groups of 10 users per page using Paginator
+- Implement paging logic to move back and forth
+- Implement 'Delete' logic using user id
+- Create "Confirm Delete" page
+- Implement 'Edit' logic using user id
+- Create 'Edit' form with current user as placeholders
