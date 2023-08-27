@@ -43,6 +43,8 @@ def edit_user(request, id):
 def delete_user(request, id):
     for user in users:
         if user["id"] == id:
-            users.remove(user)
             break
-    return redirect("user_pages")
+    if request.method == "POST":
+        users.remove(user)
+        return redirect("user_pages")
+    return render(request, "confirmDelete.html", {"user": user})
