@@ -4,6 +4,9 @@ from django.shortcuts import redirect, render
 
 from UserPagination.settings import API_URL
 
+from .utils import get_user_by_id
+
+# API consumption and global 'users' variable
 try:
     response = requests.get(API_URL)
     response.raise_for_status()
@@ -22,28 +25,30 @@ def user_pages(request):
 
 
 def edit_user(request, id):
-    for user in users:
-        if user["id"] == id:
-            current_user = user
-            curr_user_index = users.index(user)
+    current_user = get_user_by_id(id, users)
+
+    if current_user is None:
+        return redirect("user_pages")
+
+    curr_user_index = users.index(current_user)
 
     if request.method == "POST":
-        updated_user = {
+        users[curr_user_index] = {
             "id": id,
             "name": request.POST["name"],
             "age": request.POST["age"],
             "email": request.POST["email"],
         }
-        users[curr_user_index] = updated_user
         return redirect("user_pages")
 
     return render(request, "edit.html", {"user": current_user})
 
 
 def delete_user(request, id):
-    for user in users:
-        if user["id"] == id:
-            break
+    user = get_user_by_id(id, users)
+    if user is None:
+        return redirect("user_pages")
+
     if request.method == "POST":
         users.remove(user)
         return redirect("user_pages")
