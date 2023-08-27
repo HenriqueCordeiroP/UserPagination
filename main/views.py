@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.core.paginator import Paginator
 import requests
+from django.core.paginator import Paginator
+from django.shortcuts import redirect, render
+
 from UserPagination.settings import API_URL
 
 try:

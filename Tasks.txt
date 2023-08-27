@@ -4,7 +4,7 @@ and display user data on a card, displaying the options for edit and delete.
 
 Subtasks:
 - Create new Django project and app
-- Configure settings.py (INSTALLED_APPS, TEMPLATES)
+- Configure settings.py (INSTALLED_APPS, TEMPLATES, STATIC)
 - Configure urls.py
 - Implement a view to fetch data from the API https://run.mocky.io/v3/ce47ee53-6531-4821-a6f6-71a188eaaee0
 - Design and build HTML for table display
@@ -15,3 +15,4 @@ Subtasks:
 - Create "Confirm Delete" page
 - Implement 'Edit' logic using user id
 - Create 'Edit' form with current user as placeholders
+- Refactor and Refine code and styles
